@@ -118,6 +118,7 @@ class MyPackageFinder(PackageFinder):
 
 def main(package, index_url):
     req = InstallRequirement.from_line(package, None)
+    print 'Going to ping %s' % index_url
     finder = MyPackageFinder([], [index_url])
     versions = finder.find_requirement(req, False)
     return versions[0][1]
