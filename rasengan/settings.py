@@ -1,11 +1,14 @@
-# Django settings for rasengan project.
+# Django settings for Rasengan project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Nanda', 'madhav.bnk@gmail.com'),
 )
+
+PROJECT_NAME = os.path.basename(os.getcwd())
 
 MANAGERS = ADMINS
 
@@ -98,10 +101,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'rasengan.urls'
+ROOT_URLCONF = '.'.join((PROJECT_NAME, 'urls'))
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'rasengan.wsgi.application'
+WSGI_APPLICATION = '.'.join((PROJECT_NAME, 'wsgi', 'application'))
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -116,10 +119,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'django.contrib.admin',
+    'users'
 )
 
 # A sample logging configuration. The only tangible logging
