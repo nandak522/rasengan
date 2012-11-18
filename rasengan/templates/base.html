@@ -1,7 +1,23 @@
-{% include 'header.html' %}
-<div style='text-align:left;padding:0 1em;'>
-    {% block content %}
-        I am in the body
-    {% endblock %}
-</div>
-{% include 'footer.html' %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Bootstrap -->
+    <link href="/site_media/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/site_media/rasengan/css/main.css" rel="stylesheet" media="screen">
+    </head>
+    <body>
+    <div class='container'>
+        <div class='row'>
+            {% include 'header.html' %}
+            <div class='mainbody'>
+                {% block content %}
+                    I am in the body
+                {% endblock %}
+            </div>
+            {% include 'footer.html' %}
+        </div>
+    </div>
+    <script src="/site_media/bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>

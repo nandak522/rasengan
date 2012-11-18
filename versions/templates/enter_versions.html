@@ -1,0 +1,9 @@
+{% extends 'base.html'%}
+{% block content %}
+<h4>Enter the Versions</h4>
+<form action="{% url 'validate_versions' %}" method="post">{% csrf_token %}
+{{form.versions}}{{form.versions.errors}}
+<br/>
+<input class='btn btn-primary' type='submit' value='Validate'/>
+</form>
+{% endblock %}
