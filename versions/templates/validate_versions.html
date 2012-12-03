@@ -9,7 +9,8 @@
         <td><span class="label label-{{version_info.flag}}">{{version_info.version}}</span></td>
         <td>
             {% ifequal version_info.flag 'warning' %}
-                Pick Latest ? <input type='checkbox' name='pick_latest'/>
+                <input type='hidden' name='pick_latest_'/>
+                Pick Latest ? <input type='checkbox' name='pick_latest_{{forloop.counter0}}' vale='{{version_info.name}}${{version_info.version}}'/>
             {% else %}
                 Already Latest
             {% endifequal %}
@@ -18,6 +19,6 @@
 {% endfor %}
 </table>
 <br/>
-<input class='btn btn-primary' type='submit' value='Generate File'/>
+<input class='btn btn-primary' type='submit' value='Generate File'/> with name:<input type='text' value='{{default_file_name}}' name='save_file_as'/>
 </form>
 {% endblock %}
