@@ -1,27 +1,38 @@
-*.py[co]
+# mac cruft
+.DS_Store
 
-# Packages
-*.egg
-*.egg-info
-dist
-build
-eggs
-parts
+#emacs cruft
+*~
+*#*
+*.py[co]
+*flymake.py
+.ropeproject
+
+# vim cruft
+*.swp
+
+# wing cruft
+*.wpr
+
+#virtualenv cruft
 bin
-var
-sdist
+lib
+include
+bootstrap.py
 develop-eggs
 .installed.cfg
 
-# Installer logs
+#python cruft
+*.egg
+*.egg-info
+.noseids
+*prof*
 pip-log.txt
 
-# Unit test / coverage reports
+#test cruft
+*_test
 .coverage
-.tox
+temp
 
-#Translations
-*.mo
-
-#Mr Developer
-.mr.developer.cfg
+# backup cruft
+*.old
