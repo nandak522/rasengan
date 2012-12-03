@@ -7,17 +7,13 @@
     <link href="/site_media/rasengan/css/main.css" rel="stylesheet" media="screen">
     </head>
     <body>
-    <div class='container'>
-        <div class='row'>
-            {% include 'header.html' %}
-            <div class='mainbody'>
-                {% block content %}
-                    I am in the body
-                {% endblock %}
-            </div>
-            {% include 'footer.html' %}
+        {% include 'header.html' %}
+        <div id='maincontent' class='container'>
+            {% block content %}
+                I am in the body
+            {% endblock %}
         </div>
-    </div>
+        {% include 'footer.html' %}
     <script src="/site_media/bootstrap/js/bootstrap.min.js"></script>
     </body>
 </html>
